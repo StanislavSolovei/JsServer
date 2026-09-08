@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista użytkowników - wersja gotowa</title>
+  <link rel="stylesheet" href="../styl.css">
+</head>
+<body>
+  <a class="powrot" href="../index.html">powrót do spisu</a>
+
+  <h1>Użytkownicy</h1>
+  <p class="podtytul">Dane pobierane z API w trakcie działania strony.</p>
+
+  <p><input type="search" id="szukaj" placeholder="Filtruj po nazwisku lub mieście"></p>
+
+  <p id="status" class="status">Ładowanie...</p>
+
+  <ul class="lista" id="lista"></ul>
+
+  <h2>Do pokazania na lekcji</h2>
+  <ol>
+    <li><code>Ctrl+U</code> pokazuje pusty znacznik <code>ul</code>. Treść dopisuje JavaScript.</li>
+    <li>W zakładce Network widać żądanie do <code>/users</code> i odpowiedź w formacie JSON.</li>
+    <li>Wpisywanie w pole wyszukiwania nie generuje nowych żądań. Filtrujemy dane,
+        które są już w pamięci przeglądarki.</li>
+  </ol>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

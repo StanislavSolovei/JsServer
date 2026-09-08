@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Co przeglądarka wysyła do serwera</title>
+  <link rel="stylesheet" href="../styl.css">
+</head>
+<body>
+  <a class="powrot" href="../index.html">powrót do spisu</a>
+
+  <h1>Co przeglądarka wysyła do serwera</h1>
+  <p class="podtytul">Otwórz DevTools (F12), zakładka Network, filtr Fetch/XHR, potem kliknij przycisk.</p>
+
+  <p>
+    <button id="przycisk">Wyślij trzy żądania</button>
+    <button id="czysc" class="pusty">Wyczyść</button>
+  </p>
+
+  <div id="wyniki"></div>
+
+  <h2>Na co patrzymy w zakładce Network</h2>
+  <ul>
+    <li><strong>Name</strong> - adres, pod który poszło żądanie.</li>
+    <li><strong>Method</strong> - metoda HTTP, tutaj zawsze GET.</li>
+    <li><strong>Status</strong> - odpowiedź serwera. 200 znaczy w porządku, 404 nie znaleziono.</li>
+    <li><strong>Type</strong> - rodzaj zasobu. Dokument, skrypt, arkusz stylów, fetch.</li>
+    <li><strong>Response</strong> - treść, którą serwer odesłał. Tutaj JSON.</li>
+  </ul>
+
+  <p>Ostatnie żądanie jest celowo skierowane pod nieistniejący adres. Zobacz, jakim kolorem
+     oznacza je przeglądarka i jaki ma status.</p>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
