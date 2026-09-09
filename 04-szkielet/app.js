@@ -11,16 +11,21 @@ async function pobierzUzytkownikow() {
     // ZADANIE 1
     // Wyslij zadanie pod ADRES_API i zapisz odpowiedz w stalej "odpowiedz".
     // Podpowiedz: fetch zwraca obietnice, wiec potrzebne jest slowo await.
-    const odpowiedz = null;
+
+    const odpowiedz = await fetch(ADRES_API);
 
     // ZADANIE 2
     // Sprawdz, czy odpowiedz.ok jest prawdziwe.
     // Jesli nie, rzuc bledem z komunikatem zawierajacym odpowiedz.status.
 
+    if(!odpowiedz.ok){
+      throw new Error(`Błąd pobierania danych. Status: ${odpowiedz.status}`);
+    }
+
     // ZADANIE 3
     // Zamien tresc odpowiedzi na tablice obiektow JavaScriptu.
     // Podpowiedz: metoda .json(), rowniez asynchroniczna.
-    const uzytkownicy = [];
+    const uzytkownicy = await odpowiedz.json();
 
     pokazUzytkownikow(uzytkownicy);
     status.textContent = `Pobrano ${uzytkownicy.length} rekordow`;
@@ -38,6 +43,28 @@ function pokazUzytkownikow(uzytkownicy) {
   // Kazdy element ma pokazac: name pogrubione, ponizej email i address.city.
   // Podpowiedz: metoda map, szablony napisow z backtickami, na koncu join("").
   lista.innerHTML = "";
+  uzytkownicy.forEach(user => {
+    const li = document.createElement('li');
+    const b = document.createElement('b')
+    b.textContent = user.name
+    li.appendChild(b)
+
+    const br = document.createElement('br')
+    li.appendChild(br)
+
+    const email = document.createElement('span')
+    email.textContent = user.email
+    li.appendChild(email)
+
+    const br2 = document.createElement('br')
+    li.appendChild(br2)
+
+    const city = document.createElement('span')
+    city.textContent = user.address.city
+    li.appendChild(city)
+
+    lista.appendChild(li)
+  })
 }
 
 // ZADANIE 5, dla chetnych
