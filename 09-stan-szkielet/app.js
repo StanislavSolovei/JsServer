@@ -60,6 +60,8 @@ function usun(id) {
   // ZADANIE 4
   // Usun z tablicy zadanie o podanym id i przerysuj widok.
   // Podpowiedz: filter zwraca NOWA tablice, wiec zmienna musi byc let
+  zadania = zadania.filter(zadanie => zadanie.id !== id);
+  rysuj();
 }
 
 // --- ZDARZENIA ---
@@ -82,7 +84,17 @@ formularz.addEventListener("submit", (e) => {
 // Podepnij JEDEN nasluch kliniecia na elemencie lista (delegacja zdarzen).
 // Sprawdz, czy kliknieto w przycisk z atrybutem data-usun, i wywolaj usun().
 // Uwaga: dataset zwraca tekst, wiec potrzebna jest konwersja przez Number().
-//
+lista.addEventListener("click", (e) => {
+  const liElement = e.target.closest("li");
+  if(!liElement) return;
+
+  const idZadania = Number(liElement.dataset.id);
+
+  if(e.target.hasAttribute("data-usun")) {
+    usun(idZadania);
+    return;
+  }
+})
 // Dla chetnych: klikniecie w tresc zadania ma przelaczac je na zrobione
 // i z powrotem.
 
