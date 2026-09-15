@@ -25,13 +25,19 @@ function rysuj() {
   // Kazdy element ma zawierac tresc zadania i przycisk usuwania.
   // Zadanie zrobione ma dostac klase "zrobione" na elemencie li.
   // Podpowiedz: map, operator warunkowy ? :, na koncu join("")
-  lista.innerHTML = "";
+  lista.innerHTML = zadania.map(zadanie => {
+    const klasaZrobione = zadanie.zrobione ? 'class="zrobione"' : '';
 
+    return `<li ${klasaZrobione}>
+        ${zadanie.tresc}
+        <button>Usuń</button>
+    </li>`;
+  }).join("");
+}
   // ZADANIE 2
   // Ustaw tekst licznika w formacie: Zrobione: 1 z 2
   // Podpowiedz: filter i wlasciwosc length
   licznik.textContent = "";
-}
 
 // --- ZMIANY STANU ---
 
