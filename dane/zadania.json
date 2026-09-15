@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "tresc": "Powtorzyc fetch i async/await",
+    "zrobione": false
+  },
+  {
+    "id": 2,
+    "tresc": "Oddac prace domowa z postami",
+    "zrobione": true
+  },
+  {
+    "id": 3,
+    "tresc": "Przeczytac o localStorage",
+    "zrobione": false
+  },
+  {
+    "id": 4,
+    "tresc": "Podzielic kod na moduly",
+    "zrobione": false
+  }
+]

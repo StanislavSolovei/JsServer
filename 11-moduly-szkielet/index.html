@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moduły i localStorage - szkielet</title>
+  <link rel="stylesheet" href="../styl.css">
+</head>
+<body>
+  <a class="powrot" href="../index.html">powrót do spisu</a>
+
+  <h1>Lista zadań</h1>
+  <p class="podtytul">Twoje zadanie: dodaj zapis danych i podziel kod na pliki.</p>
+
+  <form class="formularz" id="formularz" novalidate>
+    <div>
+      <label for="tresc">Nowe zadanie</label>
+      <input type="text" id="tresc">
+    </div>
+    <p class="blad-pola" id="blad"></p>
+    <div>
+      <button type="submit">Dodaj</button>
+    </div>
+  </form>
+
+  <p class="licznik" id="licznik"></p>
+
+  <ul class="lista" id="lista"></ul>
+
+  <!--
+    ZADANIE: kiedy podzielisz kod na moduly, ten znacznik musi wygladac tak:
+    <script type="module" src="main.js"></script>
+    Bez type="module" slowo import wywola blad skladni.
+  -->
+  <script src="app.js" defer></script>
+</body>
+</html>

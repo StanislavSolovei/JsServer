@@ -90,3 +90,76 @@ code {
 }
 
 .powrot { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+
+/* --- style dodane dla lekcji 3, 4 i 5 --- */
+
+.formularz {
+  background: var(--karta);
+  border: 1px solid var(--ramka);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  display: grid;
+  gap: .6rem;
+}
+
+.formularz label {
+  font-size: .9rem;
+  color: var(--szary);
+}
+
+.formularz textarea {
+  font: inherit;
+  padding: .5rem .7rem;
+  border: 1px solid var(--ramka);
+  border-radius: 6px;
+  width: 100%;
+  min-height: 4rem;
+  resize: vertical;
+}
+
+.blad-pola {
+  color: var(--blad);
+  font-size: .88rem;
+  min-height: 1.2rem;
+}
+
+input.niepoprawne, textarea.niepoprawne {
+  border-color: var(--blad);
+}
+
+.pozycja {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+}
+
+.pozycja .tresc { flex: 1; cursor: pointer; }
+
+li.zrobione .tresc {
+  text-decoration: line-through;
+  color: var(--szary);
+}
+
+button.maly {
+  padding: .2rem .55rem;
+  font-size: .85rem;
+  background: #fff;
+  color: var(--blad);
+  border-color: var(--ramka);
+}
+
+.licznik {
+  color: var(--szary);
+  font-size: .92rem;
+  margin: .4rem 0 1rem;
+}
+
+pre.odpowiedz {
+  background: #1b1f24;
+  color: #e7edf3;
+  padding: .8rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: .85rem;
+}
