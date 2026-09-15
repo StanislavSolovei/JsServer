@@ -94,8 +94,16 @@ lista.addEventListener("click", (e) => {
     usun(idZadania);
     return;
   }
-})
 // Dla chetnych: klikniecie w tresc zadania ma przelaczac je na zrobione
 // i z powrotem.
+if (e.target.classList.contains("tekst-zadania") || e.target.tagName === "LI") {
+  const zadanie = zadania.find(z => z.id === idZadania);
+  if (zadanie) {
+    zadanie.zrobione = !zadanie.zrobione;
+    rysuj();
+  }
+}
+});
+
 
 rysuj();
