@@ -28,17 +28,18 @@ function rysuj() {
   lista.innerHTML = zadania.map(zadanie => {
     const klasaZrobione = zadanie.zrobione ? 'class="zrobione"' : '';
 
-    return `<li ${klasaZrobione}>
-        ${zadanie.tresc}
-        <button>Usuń</button>
+    return `<li ${klasaZrobione} data-id="${zadanie.id}">
+        <span class="tekst-zadania">${zadanie.tresc}</span>
+        <button data-usun="true">Usuń</button>
     </li>`;
   }).join("");
-}
+
   // ZADANIE 2
   // Ustaw tekst licznika w formacie: Zrobione: 1 z 2
   // Podpowiedz: filter i wlasciwosc length
-  licznik.textContent = "";
-
+  const zrobioneZadania = zadania.filter(zadanie => zadanie.zrobione === true);
+  licznik.textContent = `Zrobione: ${zrobioneZadania.length} z ${zadania.length}`;
+}
 // --- ZMIANY STANU ---
 
 function dodaj(tresc) {
