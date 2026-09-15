@@ -46,6 +46,14 @@ function dodaj(tresc) {
   // ZADANIE 3
   // Dopisz nowe zadanie do tablicy i przerysuj widok.
   // Jako id uzyj Date.now(), zrobione ustaw na false.
+  const noweZadanie = {
+    id: Date.now(),
+    tresc: tresc,
+    zrobione: false
+  };
+
+  zadania.push(noweZadanie);
+  rysuj();
 }
 
 function usun(id) {
