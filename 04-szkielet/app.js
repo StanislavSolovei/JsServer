@@ -11,6 +11,10 @@ async function pobierzUzytkownikow() {
     // ZADANIE 1
     // Wyslij zadanie pod ADRES_API i zapisz odpowiedz w stalej "odpowiedz".
     // Podpowiedz: fetch zwraca obietnice, wiec potrzebne jest slowo await.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 015da8ea962b9034aac2c38a21cbbad7217e9d6c
     const odpowiedz = await fetch(ADRES_API);
 
     // ZADANIE 2
@@ -18,7 +22,11 @@ async function pobierzUzytkownikow() {
     // Jesli nie, rzuc bledem z komunikatem zawierajacym odpowiedz.status.
 
     if(!odpowiedz.ok){
+<<<<<<< HEAD
       throw new Error(`Błąd po stronie servera: ${odppowiedz.status}`)
+=======
+      throw new Error(`Błąd pobierania danych. Status: ${odpowiedz.status}`);
+>>>>>>> 015da8ea962b9034aac2c38a21cbbad7217e9d6c
     }
 
     // ZADANIE 3
@@ -64,6 +72,7 @@ function pokazUzytkownikow(uzytkownicy) {
 
     lista.appendChild(li)
   })
+<<<<<<< HEAD
 }
 
 function szukaj(text){
@@ -80,6 +89,8 @@ function szukaj(text){
     }
   }
   pobierzUzytkownikow(filtUzytkownicy);
+=======
+>>>>>>> 015da8ea962b9034aac2c38a21cbbad7217e9d6c
 }
 
 // ZADANIE 5, dla chetnych
