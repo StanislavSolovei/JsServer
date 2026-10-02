@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formularz - szkielet</title>
+  <link rel="stylesheet" href="../styl.css">
+</head>
+<body>
+  <a class="powrot" href="../index.html">powrót do spisu</a>
+
+  <h1>Dodaj wpis</h1>
+  <p class="podtytul">Twoje zadanie: uzupełnij plik <code>app.js</code>.</p>
+
+  <form class="formularz" id="formularz" novalidate>
+    <div>
+      <label for="tytul">Tytuł</label>
+      <input type="text" id="tytul">
+    </div>
+    <div>
+      <label for="tresc">Treść</label>
+      <textarea id="tresc"></textarea>
+    </div>
+    <p class="blad-pola" id="blad"></p>
+    <div>
+      <button type="submit">Wyślij na serwer</button>
+    </div>
+  </form>
+
+  <p id="status" class="status">Formularz gotowy</p>
+
+  <ul class="lista" id="lista"></ul>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

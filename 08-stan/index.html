@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stan aplikacji - wersja gotowa</title>
+  <link rel="stylesheet" href="../styl.css">
+</head>
+<body>
+  <a class="powrot" href="../index.html">powrót do spisu</a>
+
+  <h1>Lista zadań</h1>
+  <p class="podtytul">Lekcja 4. Jedno źródło prawdy i przerysowanie widoku.</p>
+
+  <form class="formularz" id="formularz" novalidate>
+    <div>
+      <label for="tresc">Nowe zadanie</label>
+      <input type="text" id="tresc" placeholder="np. Powtorzyc fetch">
+    </div>
+    <p class="blad-pola" id="blad"></p>
+    <div>
+      <button type="submit">Dodaj</button>
+    </div>
+  </form>
+
+  <p class="licznik" id="licznik"></p>
+
+  <ul class="lista" id="lista"></ul>
+
+  <h2>Do pokazania na lekcji</h2>
+  <ol>
+    <li>W konsoli wpisz <code>zadania</code>. Widzisz cały stan aplikacji w jednym miejscu.</li>
+    <li>Wpisz <code>zadania.push({ id: 99, tresc: "Test", zrobione: false })</code>.
+        Dane się zmieniły, ekran stoi. Dopiero <code>rysuj()</code> go dogania.</li>
+    <li>Licznik u góry nigdy się nie rozjedzie z listą, bo powstaje z tego samego stanu.</li>
+    <li>Kliknięcie w treść przełącza zadanie, kliknięcie w przycisk je usuwa.
+        Obsługuje to jeden nasłuch na całej liście, nie jeden na każdym przycisku.</li>
+    <li>Odśwież stronę. Wszystko wraca do dwóch przykładowych zadań, bo nic nie zapisuje
+        stanu. Tym zajmiemy się na następnej lekcji.</li>
+  </ol>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

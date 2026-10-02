@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Komponenty - szkielet</title>
+  <link rel="stylesheet" href="../styl.css">
+</head>
+<body>
+  <a class="powrot" href="../index.html">powrót do spisu</a>
+
+  <h1>Lista zadań</h1>
+  <p class="podtytul">Twoje zadanie: przenieś wygląd do pliku <code>komponenty.js</code>.</p>
+
+  <form class="formularz" id="formularz" novalidate>
+    <div>
+      <label for="tresc">Nowe zadanie</label>
+      <input type="text" id="tresc" placeholder="np. Powtorzyc komponenty">
+    </div>
+    <div>
+      <label for="priorytet">Priorytet</label>
+      <select id="priorytet">
+        <option value="wysoki">wysoki</option>
+        <option value="sredni" selected>średni</option>
+        <option value="niski">niski</option>
+      </select>
+    </div>
+    <p class="blad-pola" id="blad"></p>
+    <div>
+      <button type="submit">Dodaj</button>
+    </div>
+  </form>
+
+  <div id="aplikacja"></div>
+
+  <h2>Kryterium zaliczenia</h2>
+  <ol>
+    <li>Aplikacja wygląda i działa dokładnie tak jak przed zmianą.</li>
+    <li>Funkcja <code>rysuj</code> w pliku <code>widok.js</code> ma najwyżej pięć linii.</li>
+    <li>W całym projekcie jest jedno przypisanie do <code>innerHTML</code>.</li>
+    <li>Żaden komponent nie sięga po dane spoza swojego argumentu.</li>
+  </ol>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

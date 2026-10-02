@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moduły i localStorage - wersja gotowa</title>
+  <link rel="stylesheet" href="../styl.css">
+</head>
+<body>
+  <a class="powrot" href="../index.html">powrót do spisu</a>
+
+  <h1>Lista zadań</h1>
+  <p class="podtytul">Lekcja 5. Kod podzielony na pliki, dane przeżywają odświeżenie.</p>
+
+  <form class="formularz" id="formularz" novalidate>
+    <div>
+      <label for="tresc">Nowe zadanie</label>
+      <input type="text" id="tresc" placeholder="np. Powtorzyc moduly">
+    </div>
+    <p class="blad-pola" id="blad"></p>
+    <div>
+      <button type="submit">Dodaj</button>
+      <button type="button" class="pusty" id="wyczysc">Wyczyść wszystko</button>
+    </div>
+  </form>
+
+  <p class="licznik" id="licznik"></p>
+  <p id="status" class="status">Ładowanie...</p>
+
+  <ul class="lista" id="lista"></ul>
+
+  <h2>Do pokazania na lekcji</h2>
+  <ol>
+    <li>Dodaj zadanie i odśwież stronę. Zostaje.</li>
+    <li>DevTools, zakładka Application, sekcja Local Storage. Widać zapisany JSON.
+        Można go tam skasować ręcznie i odświeżyć stronę.</li>
+    <li>Cztery pliki: <code>api.js</code> rozmawia z serwerem, <code>stan.js</code>
+        trzyma dane, <code>widok.js</code> rysuje, <code>main.js</code> spina to razem.</li>
+    <li>W <code>api.js</code> nie ma ani jednego <code>getElementById</code>.
+        W <code>widok.js</code> nie ma ani jednego <code>fetch</code>. To jest test
+        poprawnego podziału.</li>
+    <li>Zwróć uwagę na <code>type="module"</code> w znaczniku script. Bez tego
+        słowo <code>import</code> wywoła błąd składni.</li>
+  </ol>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
